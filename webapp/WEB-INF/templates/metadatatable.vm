@@ -33,13 +33,14 @@
 	#set ($test = $renderedNodesMap.put($name,true))
 
 	#set ($idadd = $idadd + 1)
-	<div class="metadata-label">#prettyNode ($name)&nbsp;</div>
+	<div class="panel-body">#prettyNode ($name)&nbsp;
 
-	<table id="ele_$idadd" class="metadata-table" style="display: $style">
+	<table id="ele_$idadd" class="table table-striped table-condensed" >
+	<tbody>
 	#foreach  ($statement in $metadataPropList)
 		<tr>
-			<td valign="top" class="metadata-property">#prettyNode ($statement.getPredicate())</td>
-			<td class="metadata-object">
+			<td>#prettyNode ($statement.getPredicate())</td>
+			<td>
 				#set ($object = $statement.getObject())
 				#set ($alreadyRendered = $renderedNodesMap.containsKey($object))
 				#if ($object.isResource() && $object.listProperties().toList().size() > 0 && !$alreadyRendered)
@@ -50,6 +51,8 @@
 			</td>
 		</tr>
 	#end
+	</tbody>
 	</table>
+	</div>
 #end
 
