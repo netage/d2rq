@@ -4,7 +4,7 @@
 <head>
 <title>#if ($label) $label.string | $server_name #else
 	Description of $uri | $server_name #end</title>
-<link rel="stylesheet" href='/static/main.css' />
+<link rel="stylesheet" href='${home_link}static/main.css' />
 <link rel="stylesheet"
 	href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.0.1-p7/css/bootstrap.min.css" />
 <link rel="stylesheet"
@@ -29,7 +29,7 @@
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="$home_link">Home</a></li>
-					<li><a href="/dataset">Description</a></li>
+					<li><a href="$home_link/dataset">Description</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
